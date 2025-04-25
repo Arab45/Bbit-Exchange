@@ -20,7 +20,7 @@ export default function Start() {
             </View>
          </View>
          <View style={{flex: 1, justifyContent: "flex-end", alignItems: "center", paddingBottom: 24}}>
-         <Pressable style={styles.getButton} onPress={() => { router.push("/") }}>
+         <Pressable style={styles.getButton} onPress={() => { router.push("/signup") }}>
             <Text style={styles.getText}>Get Started</Text>
          </Pressable>
          </View>

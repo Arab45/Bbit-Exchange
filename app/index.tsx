@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 24,
-    marginBottom: 24
+    marginBottom: 34
   },
   nextText: {
     color: "#fff",
