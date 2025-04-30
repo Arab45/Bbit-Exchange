@@ -1,7 +1,7 @@
 import { SafeAreaView, StyleSheet, TextInput } from "react-native";
 
 interface Props{
-    value: string;
+    value?: string;
     placeholder: string;
     secureTextEntry?: boolean;
 }
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height:60,
         backgroundColor: "#fff",
-        borderWidth: 2,
+        borderWidth: 1.5,
         borderColor: "#000056",
         borderRadius: 18,
         paddingHorizontal: 20,
