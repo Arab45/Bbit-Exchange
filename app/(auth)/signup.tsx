@@ -5,6 +5,8 @@ import { router } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
 import Checkbox from 'expo-checkbox';
 import { useState } from "react";
+import { useSignUp } from "@/hooks/query";
+
 
 
 export default function SignUp() {
@@ -14,6 +16,24 @@ export default function SignUp() {
     const [phone, setIsPhone] = useState("");
     const [password, setIsPassword] = useState("");
 
+    const { mutateAsync, isSuccess, error } = useSignUp();
+
+    const handleSignUp = async () => {
+        setChecked(true);
+        if (isChecked) {  // Check if the user has agreed to the terms
+            try {
+                // Wait for the mutation to complete before navigating
+                await mutateAsync({
+                    username,
+                    email,
+                    phone,
+                    password,
+                });
+                router.push("/login");  // Redirect to login page after success
+            } catch (error) {
+                console.log("Signup failed:", error);
+            }}
+    };
 
     return (
         <SafeAreaView style={styles.container}>
@@ -28,10 +48,10 @@ export default function SignUp() {
                 <Text style={styles.headerText}>Sign Up</Text>
                 <Text style={styles.subText}>Create an account to continue</Text>
 
-                <CustomInput placeholder="username" />
-                <CustomInput placeholder="email" />
-                <CustomInput value="phone" placeholder="phone" />
-                <CustomInput value="password" placeholder="password" />
+                <CustomInput value={username} placeholder="username" onChangeText={setIsUsername} />
+                <CustomInput value={email} placeholder="email" onChangeText={setIsEmail}/>
+                <CustomInput value={phone} placeholder="phone" onChangeText={setIsPhone}/>
+                <CustomInput value={password} placeholder="password" onChangeText={setIsPassword}/>
 
                 <View style={{ flexDirection: "row", alignItems: "center",  justifyContent: "space-between", gap: 2,  }}>
                     <Checkbox
@@ -45,7 +65,7 @@ export default function SignUp() {
                     </Text>
                 </View>
 
-                <Pressable style={styles.signButton} onPress={() => router.push("/login")}>
+                <Pressable style={styles.signButton} onPress={() => handleSignUp()}>
                     <Text style={styles.signText}>Sign Up</Text>
                 </Pressable>
 

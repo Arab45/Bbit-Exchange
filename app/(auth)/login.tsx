@@ -3,9 +3,28 @@ import { SafeAreaView } from "react-native";
 import CustomInput from "../component/signupInput";
 import { router } from "expo-router";
 import  {MaterialIcons}  from "@expo/vector-icons";
+import { useState } from "react";
+import { useLogin } from "@/hooks/query";
 
 
 export default function SignIn() {
+    const [logInID, setIsLoginID] = useState("");
+    const [password, setIsPassword] = useState("");
+
+    const { mutateAsync, isSuccess, error } = useLogin();
+    const handleSignIn = async () => {
+        try {
+            // Wait for the mutation to complete before navigating
+            await mutateAsync({
+                logInID,
+                password,
+            });
+            router.push("/dashboard");  // Redirect to dashboard page after success
+        } catch (error) {
+            console.log("Login failed:", error);
+        }
+    }
+
     return (
         <SafeAreaView style={styles.container}>
                      <View style={styles.backIcon}>
@@ -24,8 +43,8 @@ export default function SignIn() {
                         <Text style={{ color: "#000056" }}>Welcome back, you have been missed!</Text>
                     </View>
                     <View>
-                        <CustomInput  placeholder="Email" />
-                        <CustomInput  placeholder="Password" secureTextEntry={true} />
+                        <CustomInput value={logInID} placeholder="Email" onChangeText={setIsLoginID} />
+                        <CustomInput value={password} placeholder="Password" secureTextEntry={true} onChangeText={setIsPassword} />
                         <View style={{ alignItems: "flex-end" }}>
                             <Text style={{ color: "#000056" }}>Forget Password?</Text>
                             <View style={styles.line} />
@@ -35,7 +54,7 @@ export default function SignIn() {
                 </View>
 
                 <View style={styles.footer}>
-                    <Pressable style={styles.signInButton} onPress={() => { }}>
+                    <Pressable style={styles.signInButton} onPress={() => handleSignIn()}>
                         <Text style={styles.signInText}>Log In</Text>
                     </Pressable>
                     <Text style={styles.signupLink} onPress={() => router.push("/signup")}>

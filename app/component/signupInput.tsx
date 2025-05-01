@@ -4,9 +4,10 @@ interface Props{
     value?: string;
     placeholder: string;
     secureTextEntry?: boolean;
+    onChangeText?: (text: string) => void;
 }
 
-export default function CustomInput({value, placeholder, secureTextEntry}: Props) {
+export default function CustomInput({value, placeholder, onChangeText, secureTextEntry}: Props) {
     return (
         <SafeAreaView>
             <TextInput
@@ -15,6 +16,7 @@ export default function CustomInput({value, placeholder, secureTextEntry}: Props
             style={styles.inputFields}
             secureTextEntry={secureTextEntry}
             placeholderTextColor="#000"
+            onChangeText={onChangeText}
              />
         </SafeAreaView>
     )
