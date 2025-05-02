@@ -8,8 +8,9 @@ export default function Notification() {
     return (
         <SafeAreaView style={styles.container}>
             <Text>Notification</Text>
-            <Text>{data.Content}</Text>
-            <Text>{data.message}</Text>
+            {/* <Text>{data?.content}</Text> */}
+            <Text>{data?.token[0]?.subject}</Text>
+            <Text>{data?.token[0]?.accountObject?.time}</Text>
         </SafeAreaView>
     )
 }

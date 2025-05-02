@@ -12,7 +12,11 @@ export default function Dashboard() {
                         <Image source={require("../../assets/folder/Ellipse.png")} />
                         <Text style={{ color: "#fff" }}>Oracle Neox</Text>
                     </View>
-                        <EvilIcons name="bell" size={24} color="#fff" onPress={ () => { router.push("/notification")}} />
+                    <View >
+                    <Pressable onPress={() => router.push("/notification")}>
+                        <EvilIcons name="bell" size={30} color="white" />
+                    </Pressable>
+                    </View>
                 </View>
                 <View style={{ alignItems: "center", justifyContent: "center", height: 200, gap: 12 }}>
                     <Text style={{ color: "#fff", fontSize: 12 }}>CURRENT BALANCE</Text>
