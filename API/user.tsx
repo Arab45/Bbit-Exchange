@@ -76,3 +76,14 @@ export const getToken = async () => {
         console.error('Error retrieving token:', error);
     }
 };
+
+
+export const notificationFn = async () => {
+    const response = await axios.get('https://backend-bit.onrender.com/notification/all-notification')
+    const data = await response.data;
+    console.log('Notification:', data);
+    if (!data) {
+        throw new Error("Data not found in response");
+    }
+    return data;
+}

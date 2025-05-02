@@ -1,5 +1,5 @@
-import { login, signUp} from '../API/user';
-import { useMutation } from '@tanstack/react-query';
+import { login, signUp, notificationFn} from '../API/user';
+import { useMutation, useQuery } from '@tanstack/react-query';
 
 export const useSignUp = () => {
     return useMutation({
@@ -23,4 +23,11 @@ export const useLogin = () => {
             console.error('Login error:', error);
         }
     });
+}
+
+export const notification = () => {
+    return useQuery({
+        queryKey: ['notification'],
+        queryFn: notificationFn
+    })
 }
