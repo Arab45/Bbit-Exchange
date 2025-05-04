@@ -39,17 +39,17 @@ export default function AuthLayout() {
         }}
       />
       <Stack.Screen
-        name="dashboard"
+        name="(tabs)"
         options={{
           headerShown: false,
         }}
         />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="notification"
         options={{
           headerShown: false,
         }}
-        />
+        /> */}
     </Stack>
   );
 }
