@@ -56,6 +56,18 @@ export default function AuthLayout() {
           headerShown: false,
         }}
         />
+      <Stack.Screen
+        name="referral"
+        options={{
+          headerShown: false,
+        }}
+        />
+      <Stack.Screen
+        name="community"
+        options={{
+          headerShown: false,
+        }}
+        />
     </Stack>
   );
 }

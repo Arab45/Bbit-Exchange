@@ -28,12 +28,16 @@ export default function LeaderBoard() {
                         data={data?.token ?? []}
                         keyExtractor={(item, index) => index.toString()}
                         renderItem={({ item }) => (
-                            <View style={{ flexDirection: "row", paddingVertical: 12, borderBottomWidth: 0.5, borderBottomColor: "gray", gap: 12 }}>
-                                <View>
-                                    <Image source={{uri: item?.avatarImg}} />
-                                    <Text style={{ color: "#000056", fontSize: 16 }}>{item?.accountObject?.name}</Text>
+                            <View style={{ flexDirection: "row", paddingVertical: 12, gap: 12, justifyContent: "space-between", alignItems: "center" }}>
+                                <View style={{ flexDirection: "row", gap: 12, alignItems: "center" }}>
+                                    <Image 
+                                    source={{uri: item?.avatarImg}} 
+                                      style={{ width: 48, height: 48, borderRadius: 24 }}
+                                      resizeMode="cover"
+                                    />
+                                    <Text style={{ color: "#000056", fontSize: 16, fontWeight: "bold" }}>{item?.name}</Text>
                                 </View>
-                                <Text style={{ color: "#000056", fontSize: 16 }}>{item?.accountObject?.rate}</Text>
+                                <Text style={{ color: "#000056", fontSize: 16, fontWeight: "bold" }}>{item?.rate}</Text>
                             </View>
                         )}
                     />

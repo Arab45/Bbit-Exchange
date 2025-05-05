@@ -13,10 +13,10 @@ export default function Dashboard() {
                         <Text style={{ color: "#fff" }}>Oracle Neox</Text>
                     </View>
                     <View >
-                    <Pressable onPress={() => router.push("/notification")}>
-                        {/* <EvilIcons name="bell" size={30} color="white" /> */}
-                        <Image source={require("../../../assets/folder/notification.png")}/>
-                    </Pressable>
+                        <Pressable onPress={() => router.push("/notification")}>
+                            {/* <EvilIcons name="bell" size={30} color="white" /> */}
+                            <Image source={require("../../../assets/folder/notification.png")} />
+                        </Pressable>
                     </View>
                 </View>
                 <View style={{ alignItems: "center", justifyContent: "center", height: 200, gap: 12 }}>
@@ -37,18 +37,22 @@ export default function Dashboard() {
                     </View>
                     <View style={{ backgroundColor: "#000056", height: 80, width: "45%", borderRadius: 20, alignItems: "center", justifyContent: "center" }} >
                         <Pressable onPress={() => router.push("/leaderboard")}>
-                        <Text style={{ color: "#fff" }}>Top User</Text>
+                            <Text style={{ color: "#fff" }}>Top User</Text>
                         </Pressable>
                     </View>
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, alignItems: "center", marginBottom: 50, gap: 12, }}>
                     <View style={{ backgroundColor: "#000056", height: 80, width: "45%", borderRadius: 20, alignItems: "center", justifyContent: "center" }}>
-                        <Text style={{ color: "#fff" }}>Staking &</Text>
-                        <Text style={{ color: "#fff" }}>Rewards</Text>
+                        <Pressable onPress={() => router.push("/referral")}>
+                            <Text style={{ color: "#fff" }}>Staking &</Text>
+                            <Text style={{ color: "#fff" }}>Rewards</Text>
+                        </Pressable>
                     </View>
                     <View style={{ backgroundColor: "#000056", height: 80, width: "45%", borderRadius: 20, alignItems: "center", justifyContent: "center" }}>
-                        <Text style={{ color: "#fff" }}>Join</Text>
-                        <Text style={{ color: "#fff" }}>Community</Text>
+                        <Pressable onPress={() => router.push("/community")}>
+                            <Text style={{ color: "#fff" }}>Join</Text>
+                            <Text style={{ color: "#fff" }}>Community</Text>
+                        </Pressable>
                     </View>
                 </View>
             </View>

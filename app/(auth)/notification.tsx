@@ -18,14 +18,14 @@ export default function Notification() {
                 <Text style={{ fontSize: 16, fontWeight: 600, textAlign: "center", color: "#000056" }}>Notification</Text>
             </View>
             <View style={{ flex: 1, backgroundColor: "#000056" }}>
-                <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 24, paddingHorizontal: 20, paddingVertical: 12 }}>
+                <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 12, marginBottom: 12, paddingHorizontal: 20, paddingVertical: 12 }}>
                     <Text style={{ color: "#fff", fontSize: 16, fontWeight: "bold", }}>All</Text>
                     <Text style={{ color: "#fff", fontSize: 16, fontWeight: "bold", }}>System Notification</Text>
                     <Text style={{ color: "#fff", fontSize: 16, fontWeight: "bold", }}>Annoucement</Text>
                 </View>
                 <View style={{ flex: 1, backgroundColor: "#fff", borderTopLeftRadius: 24, borderTopRightRadius: 24, paddingHorizontal: 20, paddingVertical: 12 }}>
                     <FlatList
-                        data={data ?? []}
+                        data={data?.token ?? []}
                         keyExtractor={(item, index) => index.toString()}
                         renderItem={({ item }) => (
                             <View style={{ paddingVertical: 12, borderBottomWidth: 0.5, borderBottomColor: "gray", gap: 12 }}>
