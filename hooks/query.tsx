@@ -1,4 +1,4 @@
-import { login, signUp, notificationFn} from '../API/user';
+import { login, signUp, notificationFn, leaderboardFn} from '../API/user';
 import { useMutation, useQuery } from '@tanstack/react-query';
 
 export const useSignUp = () => {
@@ -29,5 +29,12 @@ export const notification = () => {
     return useQuery({
         queryKey: ['notification'],
         queryFn: notificationFn
+    })
+};
+
+export const leaderBoard = () => {
+    return useQuery({
+        queryKey: ['leaderboard'],
+        queryFn: leaderboardFn
     })
 }

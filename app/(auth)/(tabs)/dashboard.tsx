@@ -9,12 +9,13 @@ export default function Dashboard() {
             <View style={styles.rectangleBox}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", padding: 20, alignItems: "center" }}>
                     <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
-                        <Image source={require("../../assets/folder/Ellipse.png")} />
+                        <Image source={require("../../../assets/folder/Ellipse.png")} />
                         <Text style={{ color: "#fff" }}>Oracle Neox</Text>
                     </View>
                     <View >
                     <Pressable onPress={() => router.push("/notification")}>
-                        <EvilIcons name="bell" size={30} color="white" />
+                        {/* <EvilIcons name="bell" size={30} color="white" /> */}
+                        <Image source={require("../../../assets/folder/notification.png")}/>
                     </Pressable>
                     </View>
                 </View>
@@ -27,7 +28,7 @@ export default function Dashboard() {
                 </View>
             </View>
             <View style={styles.bitLogo}>
-                <Image source={require("../../assets/folder/Bit.png")} />
+                <Image source={require("../../../assets/folder/Bit.png")} />
             </View>
             <View style={{ gap: 16 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, alignItems: "center", marginTop: 150, gap: 12 }}>
@@ -35,7 +36,9 @@ export default function Dashboard() {
                         <Text style={{ color: "#fff" }}>Referral</Text>
                     </View>
                     <View style={{ backgroundColor: "#000056", height: 80, width: "45%", borderRadius: 20, alignItems: "center", justifyContent: "center" }} >
+                        <Pressable onPress={() => router.push("/leaderboard")}>
                         <Text style={{ color: "#fff" }}>Top User</Text>
+                        </Pressable>
                     </View>
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, alignItems: "center", marginBottom: 50, gap: 12, }}>

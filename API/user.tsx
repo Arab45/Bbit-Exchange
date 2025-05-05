@@ -86,4 +86,14 @@ export const notificationFn = async () => {
         throw new Error("Data not found in response");
     }
     return data;
+};
+
+export const leaderboardFn = async () => {
+    const response = await axios.get('https://backend-bit.onrender.com/leader/all-leaders')
+    const data = await response.data;
+    console.log('Leaderboard:', data);
+    if (!data) {
+        throw new Error("Data not found in response");
+    }
+    return data;
 }

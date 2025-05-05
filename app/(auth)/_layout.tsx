@@ -44,12 +44,18 @@ export default function AuthLayout() {
           headerShown: false,
         }}
         />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="notification"
         options={{
           headerShown: false,
         }}
-        /> */}
+        />
+      <Stack.Screen
+        name="leaderboard"  
+        options={{
+          headerShown: false,
+        }}
+        />
     </Stack>
   );
 }

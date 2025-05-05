@@ -15,7 +15,6 @@ export default function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
       <GlobalProvider>
-
         <Stack>
           <Stack.Screen
             name="index"
