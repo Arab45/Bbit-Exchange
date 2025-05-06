@@ -1,4 +1,4 @@
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView, StyleSheet, Text } from "react-native";
 
 export default function ChangePassword (){
     return (
@@ -8,9 +8,9 @@ export default function ChangePassword (){
     )
 };
 
-const styles = {
+const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#fff",
     },
-}
+})
