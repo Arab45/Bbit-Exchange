@@ -10,7 +10,7 @@ export default function Transaction() {
                     <Image source={require("../../../assets/folder/transaction.png")} />
                     <View>
                   <Text>Total Balance</Text>
-                  <Text>4904,0486 bit</Text>  
+                  <Text style={{fontSize: 16, fontWeight: "bold"}}>4904,0486 bit</Text>  
                     </View>
                 </View>
                 <Text>History</Text>
