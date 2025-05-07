@@ -33,7 +33,7 @@ interface LoginUser {
 }
 
 
-const API_URL_LOGIN = 'https://backend-bit.onrender.com/user/signIn'; // Replace with your API URL
+const API_URL_LOGIN = 'https://backend-bit.onrender.com/user/signIn'; 
 
 export const login = async (data: LoginUser) => {
     try {
