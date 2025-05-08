@@ -96,4 +96,13 @@ export const leaderboardFn = async () => {
         throw new Error("Data not found in response");
     }
     return data;
+};
+
+export const referralFn = async () => {
+    const response = await axios.get("https://backend-bit.onrender.com/referral/all-referrals");
+    const data = await response.data;
+    if (!data) {
+        throw new Error("Data not found in response");
+    }
+    return data;
 }
