@@ -5,7 +5,7 @@ export default function Transaction() {
     return (
         <SafeAreaView style={styles.container}>
             <View>
-                <Text>Transactions History</Text>
+                <Text style={{fontSize: 16}}>Transactions History</Text>
                 <View style={{ backgroundColor: "#000056", flexDirection: "row", justifyContent: "space-between", alignItems: "center", width: "100%", height: 100}}>
                     <Image source={require("../../../assets/folder/transaction.png")} />
                     <View>
@@ -13,7 +13,7 @@ export default function Transaction() {
                   <Text style={{fontSize: 16, fontWeight: "bold"}}>4904,0486 bit</Text>  
                     </View>
                 </View>
-                <Text>History</Text>
+                <Text style={{fontSize: 16}}>History</Text>
             </View>
         </SafeAreaView>
     )
