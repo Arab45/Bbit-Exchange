@@ -105,4 +105,4 @@ export const referralFn = async () => {
         throw new Error("Data not found in response");
     }
     return data;
-}
+};
