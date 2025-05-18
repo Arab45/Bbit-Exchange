@@ -104,5 +104,5 @@ export const referralFn = async () => {
     if (!data) {
         throw new Error("Data not found in response");
     }
-    return data
+    return data;
 };
