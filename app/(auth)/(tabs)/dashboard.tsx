@@ -28,7 +28,7 @@ export default function Dashboard() {
                 </View>
             </View>
             <View style={styles.bitLogo}>
-                <Image source={require("../../../assets/folder/Bit.png")} />
+                <Image source={require("../../../assets/folder/Bit.png")} style={{ resizeMode: 'contain', height: 200, width: 200 }}/>
             </View>
             <View style={{ gap: 16 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 20, alignItems: "center", marginTop: 150, gap: 12 }}>
